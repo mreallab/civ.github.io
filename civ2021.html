@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>CVPR 2021 Causality in Vision Workshop</title>
+
+  <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/dropdown.css">
+  <link rel="stylesheet" href="./css/pygment_trac.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <style id="style-1-cropbar-clipper">
+    /* Copyright 2014 Evernote Corporation. All rights reserved. */
+    .en-markup-crop-options {
+      top: 18px !important;
+      left: 50% !important;
+      margin-left: -100px !important;
+      width: 200px !important;
+      border: 2px rgba(255, 255, 255, .38) solid !important;
+      border-radius: 4px !important;
+    }
+
+    .en-markup-crop-options div div:first-of-type {
+      margin-left: 0px !important;
+    }
+  </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.987.0" data-gr-ext-installed="">
+  <div class="wrapper">
+    <header>
+      <a href="http://cvpr2021.thecvf.com/"><img class="logo" src="./img/cvpr2021logo.jpg" width="300px"
+          align="bottom"></a>
+
+      <h1>Causality in Vision</h1>
+      <h3>CVPR 2021 Workshop, June 19 (EDT 8:00 AM), Virtual</h3>
+
+      <ul>
+        <li>
+          <a href="index.html" title="">Introduction</a>
+        </li>
+        <li>
+          <a href="submission.html" title="">Submission</a>
+        </li>
+        <li style="min-width:150px">
+          <a href="accepted.html" title="">Accepted Papers</a>
+        </li>
+        <li class="dropdown">
+          <button class="dropbtn">Previous</button>
+          <div class="dropdown-content">
+            <a href="civ2021.html">2021 CiV</a>
+          </div>
+       </li>
+      </ul>
+
+      <hr>
+    </header>
+
+    <!--
+    <section>
+      <h2>News</h2>
+
+      <ul>
+        <li>06/2021: <b style="color:red">How to attend the CiV Workshop?</b>: Registered CVPR attendees can join the CiV workshop by the Zoom link provided by CVPR21 virtual plateform. Other audiences can wait for the YouTube links of recording videos that will be released on this website. 
+        <li>05/2021: <b style="color:red">Decisions of Best Paper Award</b>: The Best Paper Prize is awarded to "CANDLE: An Image Dataset for Causal Analysis in Disentangled Representations".
+        <li>05/2021: <b style="color:red">Decisions of Oral Presentations</b>: "Counterfactual Generative Networks" and "CANDLE: An Image Dataset for Causal Analysis in Disentangled Representations" are selected as the oral presentations.
+        <li>04/2021: <b style="color:red">Presentation Submission Deadline</b>: June 1, 2021 (11:59 PM). Note that submissions after April 20, 2021 will no longer be published in the CVPR 2021 proceedings, but they can still be presented in the workshop after selection. Since the CMT submission portal is closed, please send your late submissions through email (To: kaihua001[at]e.ntu.edu.sg, Cc: hanwangzhang[at]ntu.edu.sg, yulei.niu[at]ntu.edu.sg). </li>
+        <li>03/2021: <b style="color:red">Paper Submission Deadline</b>: April 8, 2021 (11:59 PM).</li>
+        <li>01/2021: <b style="color:red">Best Paper Prize</b>: The author/team of the best paper will be awarded a US$1,000 (cash) prize.</li>
+        <li>01/2021: Submission Website: <a href="https://cmt3.research.microsoft.com/CIV2021">https://cmt3.research.microsoft.com/CIV2021</a></li>
+      </ul>
+
+    </section>
+    -->
+
+    <section>
+      <h2>Introduction</h2>
+
+      <p>Correlation is not causality. However, this common sense is often surprisingly ignored in most of today’s
+        computer vision systems, including classification, detection, segmentation, and vision-language models, because
+        they are merely trained on correlated sample-label pairs, and the resultant models are nothing short of a
+        likelihood lookup table --- we cannot expect them to generalize to unseen data distribution, not mentioning
+        to more human-level tasks such as modularization, interpretation, and imagination. What is even more regrettable
+        in our community is that we usually blame the poor generalization for insufficient data, and thus some of us may
+        be trapped in the infinite loop: “make a large dataset”---“over-fitted”---“make a larger one’’.</p>
+
+      <p>Causality is a new science of data generation, model training, and inference. Only by understanding the data
+        causality, we can remove the spurious bias, disentangle the desired model effects, and modularize reusable
+        features that generalize well. We deeply feel that it is a pressing demand for our CV community to adopt
+        causality and use it as a new mind to re-think the hype of feeding big data into gigantic deep models.</p>
+
+      <p>The goal of this workshop is to provide a comprehensive yet accessible overview of existing causality research
+        and to help CV researchers to know why and how to apply causality in their own work. We aim to invite speakers
+        from this area to present their latest works and propose new challenges.</p>
+
+    </section>
+
+    <br>
+
+    <section>
+      <h2>Invited Talks</h2>
+      <table>
+          <tr>
+            <td width="25%"><a href="https://www.is.mpg.de/~bs"><img src="img/bernhard.png" width="150px" align="bottom"></a></td>
+            <td width="25%"><a href="http://www.stat.ucla.edu/~sczhu/"><img src="img/songchun.png" width="150px" align="bottom"></a></td>
+            <td width="25%"><a href="https://www.gsb.stanford.edu/faculty-research/faculty/susan-athey"><img src="img/susan.png" width="150px" align="bottom"></a></td>
+            <td width="25%"><a href="https://staff.fnwi.uva.nl/m.welling/"><img src="img/max.png" width="150px" align="bottom"></a></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.is.mpg.de/~bs">Bernhard Schölkopf<br/>(MPI)</a></td>
+            <td><a href="http://www.stat.ucla.edu/~sczhu/">Songchun Zhu<br/>(UCLA)</a></td>
+            <td><a href="https://www.gsb.stanford.edu/faculty-research/faculty/susan-athey">Susan Athey<br/>(Stanford University)</a></td>
+            <td><a href="https://staff.fnwi.uva.nl/m.welling/">Max Welling<br/>(University of Amsterdam / Qualcomm)</a></td>
+          </tr>
+      </table>
+    </section>
+
+    <section>
+
+      <h2>Schedule</h2>
+      <table>
+        <!-- class="table table-striped table-condensed" id="schedule"> -->
+        <thead>
+          <tr>
+            <th class="time">Time (EDT)</th>
+            <th class="speaker">Invited speaker</th>
+            <th class="title">Title</th>
+            <th class="record">Recording</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="oddrow">
+            <td class="time">8:00 - 8:10</td>
+            <td class="speaker">OC Team</td>
+            <td class="title">Opening Remarks</td>
+            <td class="record"><a href="https://www.youtube.com/watch?v=tz14p_0uK00" target="_blank">
+              YouTube</a></td>
+          </tr>
+          <tr>
+            <td class="time">8:10 - 8:45</td>
+            <td class="speaker">Prof. Bernhard Schölkopf</td>
+            <td class="title">Invited Talk 1</td>
+            <td class="record"> <a href="" target="_blank">
+              TBD</a> </td>
+          </tr>
+          <tr class="oddrow">
+            <td class="time">8:45 - 9:20</td>
+            <td class="speaker">Prof. Songchun Zhu</td>
+            <td class="title">Invited Talk 2</td>
+            <td class="record"> <a href="https://www.youtube.com/watch?v=FCXNhh7sGdM" target="_blank">
+              YouTube</a> </td>
+          </tr>
+          <tr>
+            <td class="time">9:20 - 9:30</td>
+            <td class="speaker">-</td>
+            <td class="title">Coffee Break</td>
+            <td class="record"> </td>
+
+          </tr>
+          <tr class="oddrow">
+            <td class="time">9:30 - 10:05</td>
+            <td class="speaker">Prof. Max Welling</td>
+            <td class="title">Invited Talk 3</td>
+            <td class="record"> <a href="https://www.youtube.com/watch?v=B8KAl6IUSqI" target="_blank">
+              YouTube</a> </td>
+          </tr>
+          <tr>
+            <td class="time">10:05 - 10:40</td>
+            <td class="speaker">Prof. Susan Athey</td>
+            <td class="title">Invited Talk 4</td>
+            <td class="record"> <a href="https://www.youtube.com/watch?v=Hql6jQPNfoE" target="_blank">
+              YouTube</a> </td>
+          </tr>
+          <tr class="oddrow">
+            <td class="time">10:40 - 11:00</td>
+            <td class="speaker">Ph.D. Abbavaram Gowtham Reddy</td>
+            <td class="title">Oral Presentation 1</td>
+            <td class="record"> <a href="https://www.youtube.com/watch?v=EsxiL3MoJqU" target="_blank">
+              YouTube</a> </tr>
+          <tr>
+            <td class="time">11:00 - 11:20</td>
+            <td class="speaker">Ph.D. Axel Sauer</td>
+            <td class="title">Oral Presentation 2</td>
+            <td class="record"> <a href="https://www.youtube.com/watch?v=R0okbo6Ykb8" target="_blank">
+              YouTube</a> </tr>
+          </tr>
+          <tr class="oddrow">
+            <td class="time">11:20 - 11:30</td>
+            <td class="speaker">OC Team</td>
+            <td class="title">Closing Remarks</td>
+            <td class="record"> <a href="https://www.youtube.com/watch?v=nACVGUpCdYE" target="_blank">
+              YouTube</a> </td>
+          </tr>
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <br>
+
+    <section>
+      <h2>Accepted Papers</h2>
+      <table>
+        
+      <thead>
+        <tr>
+          <th class="title">Title</th>
+          <th class="authors">Authors</th>
+          <th class="zoom"> URL (for poster session)</th>
+          <th class="pdf">PDF</th>
+        </tr>
+      </thead>
+
+  
+      <tbody>
+
+        <tr class="oddrow">
+          <td class="title">
+            <p><b style="color:red">(Oral)</b> Counterfactual Generative Networks</p>
+          </td>
+          <td class="authors">Axel Sauer, Andreas Geiger</td>
+          <td class="zoom"> <a href="https://www.youtube.com/watch?v=R0okbo6Ykb8" target="_blank">
+            YouTube</a> </td>
+          <td class="pdf"><a href="./papers/0004.pdf">PDF</a></td>
+        </tr>
+
+
+        <tr class="oddrow">
+          <td class="title">
+            <p><b style="color:red">(Oral)</b> CANDLE: An Image Dataset for Causal Analysis in Disentangled Representations</p>
+          </td>
+          <td class="authors">Abbavaram Gowtham Reddy, Benin Godfrey L, Vineeth N Balasubramanian</td>
+          <td class="zoom"><a href="https://www.youtube.com/watch?v=EsxiL3MoJqU" target="_blank">
+            YouTube</a> </td>
+          <td class="pdf"><a href="./papers/0015.pdf">PDF</a>  <a href="./papers/0015_supp.pdf">[supp]</a> </td>
+        </tr>
+
+
+        <tr class="oddrow">
+          <td class="title">
+            <p>Shadow-Mapping for Unsupervised Neural Causal Discovery</p>
+          </td>
+          <td class="authors">Matthew Vowels, Necati Cihan Camgoz, Richard Bowden</td>
+          <td class="zoom">-</td>
+          <td class="pdf"><a href="./papers/0002.pdf">PDF</a></td>
+        </tr>
+
+        
+
+        <tr class="oddrow">
+          <td class="title">
+            <p>DeVLBert: Out-of-distribution Visio-Linguistic Pretraining with Causality</p>
+          </td>
+          <td class="authors">Shengyu Zhang, Tan Jiang, Tan Wang, Kun Kuang, Zhou Zhao, Jianke Zhu, Jin Yu, Hongxia Yang, Fei Wu</td>
+          <td class="zoom">-</td>
+          <td class="pdf"><a href="./papers/0005.pdf">PDF</a></td>
+        </tr>
+
+        <tr class="oddrow">
+          <td class="title">
+            <p>Grounded, Controllable and Debiased Image Completion with Lexical Semantics</p>
+          </td>
+          <td class="authors">Shengyu Zhang, Tan Jiang, Qinghao Huang, Ziqi Tan, Kun Kuang, Zhou Zhao, Siliang Tang, Jin Yu, Hongxia Yang, Yi Yang, Fei Wu</td>
+          <td class="zoom">-</td>
+          <td class="pdf"><a href="./papers/0006.pdf">PDF</a></td>
+        </tr>
+
+        <tr class="oddrow">
+          <td class="title">
+            <p>Learning Contextual Causality between Daily Events from Time-consecutive Images</p>
+          </td>
+          <td class="authors">Hongming Zhang, Yintong Huo, Xinran Zhao, Yangqiu Song, Dan Roth</td>
+          <td class="zoom">-</td>
+          <td class="pdf"><a href="./papers/0007.pdf">PDF</a></td>
+        </tr>
+
+        <tr class="oddrow">
+          <td class="title">
+            <p>Instance-wise Causal Feature Selection for Model Interpretation</p>
+          </td>
+          <td class="authors">Pranoy Panda, Sai Srinivas Kancheti, Vineeth N Balasubramanian</td>
+          <td class="zoom">-</td>
+          <td class="pdf"><a href="./papers/0009.pdf">PDF</a></td>
+        </tr>
+
+        <tr class="oddrow">
+          <td class="title">
+            <p>Matched sample selection with GANs for mitigating attribute confounding</p>
+          </td>
+          <td class="authors">Chandan Singh, Guha Balakrishnan, Pietro Perona</td>
+          <td class="zoom">-</td>
+          <td class="pdf"><a href="./papers/0012.pdf">PDF</a></td>
+        </tr>
+
+        <tr class="oddrow">
+          <td class="title">
+            <p>A causal view of compositional zero-shot recognition</p>
+          </td>
+          <td class="authors">Yuval Atzmon, Felix Kreuk, Uri Shalit, Gal Chechik</td>
+          <td class="zoom">-</td>
+          <td class="pdf"><a href="./papers/0013.pdf">PDF</a></td>
+        </tr>
+
+        <tr class="oddrow">
+          <td class="title">
+            <p>Path Intervention for Path-specific Effects</p>
+          </td>
+          <td class="authors">Heyang Gong</td>
+          <td class="zoom">-</td>
+          <td class="pdf"><a href="./papers/0014.pdf">PDF</a></td>
+        </tr>
+
+      </tbody>
+
+    </table>
+  </section>
+
+    <speaker>
+      <h2>Organizers</h2>
+
+      <table>
+        <tbody>
+          <tr>
+            <td width="25%"><a href="https://personal.ntu.edu.sg/hanwangzhang/"><img src="./img/hanwang.png"
+                  width="120px" align="bottom" style="border-radius: 50%"></a></td>
+            <td width="25%"><a href="http://pengcui.thumedialab.com/"><img src="./img/pengcui.png" width="120px"
+                  align="bottom" style="border-radius: 50%"></a></td>
+            <td width="25%"><a href="http://www.andrew.cmu.edu/user/kunz1/"><img src="./img/kunzhang.png" width="120px"
+                  align="bottom" style="border-radius: 50%"></a></td>
+            <td width="25%"><a href="https://qianrusun.com/"><img src="./img/qianrusun.png"
+                  width="120px" align="bottom" style="border-radius: 50%"></a></td>
+          </tr>
+          <tr>
+            <td>Hanwang Zhang (Nanyang Technological University)</td>
+            <td>Peng Cui (Tsinghua University)</td>
+            <td>Kun Zhang (Carnegie Mellon University)</td>
+            <td>Qianru Sun (Singapore Management University)</td>
+          </tr>
+          <tr>
+            <td width="25%"><a href="https://cispa.saarland/group/fritz/"><img src="./img/mario.png" width="120px"
+                  align="bottom" style="border-radius: 50%"></a></td>
+            <td width="25%"><a href="https://kaihuatang.github.io/"><img src="./img/kaihua.png" width="120px"
+                  align="bottom" style="border-radius: 50%"></a></td>
+            <td width="25%"><a href="https://yuleiniu.github.io/"><img src="./img/niuyulei.png" width="120px"
+                  align="bottom" style="border-radius: 50%"></a></td>
+          </tr>
+          <tr>
+            <td>Mario Fritz (CISPA Helmholtz Center for Information Security)</td>
+            <td>Kaihua Tang (Nanyang Technological University)</td>
+            <td>Yulei Niu (Nanyang Technological University)</td>
+          </tr>
+        </tbody>
+      </table>
+    </speaker>
+
+    <h2>Workshop Sponsor</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td width="100%"><a href="https://www.kuaishou.com/en"><img src="./img/kuaishou.png"
+                width="500px" align="bottom"></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Best Paper Sponsor</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td width="100%"><a href="http://aaai.net.cn/"><img src="./img/aaai.png"
+                width="500px" align="bottom"></a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <hr>
+      <p class="credit">Website design adapted from <a href="https://www.visionmeetscognition.org/index.html">FPIC
+          Workshop</a> and <a href="http://www.mindsvsmachines.com/index.html">Minds vs. Machines Workshop</a> </p>
+    </footer>
+  </div>
+
+
+</body>
+
+</html>
